@@ -554,3 +554,147 @@ footer p { font-size: .72rem; color: var(--text-3); }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE  —  mobile-first breakpoints
+   ══════════════════════════════════════════════════════════ */
+
+/* ── TABLET  (≤ 768px) ─────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Tighten tokens on tablet */
+  :root {
+    --px: clamp(1.25rem, 5vw, 2.5rem);
+    --sy: clamp(3.5rem, 8vw, 5rem);
+  }
+
+  /* Nav: reduce gap between items */
+  .nav-links { gap: .6rem; }
+
+  /* Hero: less top padding */
+  #hero { padding-top: calc(56px + 2.5rem); padding-bottom: 2.5rem; }
+
+  /* Hero subtitle: full width */
+  .hero-sub { max-width: 100%; }
+
+  /* Buttons: full width on small tablet */
+  .hero-btns { flex-direction: column; align-items: center; }
+  .btn-primary,
+  .btn-ghost  { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+
+  /* Features: 2 columns max on tablet */
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+
+  /* Steps: 2 columns */
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* Specs: single column */
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .spec-row { border-right: none; }
+
+  /* Download box: tighter padding */
+  .download-box { padding: 1.5rem; }
+
+  /* Footer: stack */
+  footer { flex-direction: column; align-items: flex-start; gap: .4rem; }
+}
+
+/* ── MOBILE  (≤ 480px) ─────────────────────────────────── */
+@media (max-width: 480px) {
+
+  :root {
+    --px: 1.1rem;
+    --sy: 3rem;
+  }
+
+  /* Nav: minimal padding, keep it tight */
+  nav { padding: 0 1.1rem; height: 52px; }
+
+  /* Hide all nav text links — keep only lang + theme + cta */
+  .hide-mobile { display: none !important; }
+
+  /* Make logo slightly smaller */
+  .nav-logo { font-size: .88rem; }
+
+  /* Hero */
+  #hero {
+    padding-top: calc(52px + 2rem);
+    padding-bottom: 2.5rem;
+    min-height: 100svh;
+  }
+
+  /* Hero tag: wrap text if needed */
+  .hero-tag {
+    font-size: .65rem;
+    padding: 4px 10px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  /* h2: more breathing room */
+  h2 { margin-bottom: 1.75rem; }
+
+  /* Hand SVG: smaller on phone */
+  .hero-hand svg { width: clamp(120px, 55vw, 180px); }
+  .hero-hand { margin-top: 2rem; }
+
+  /* Features: single column */
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card  { border-right: none; }
+
+  /* Steps: single column */
+  .steps { grid-template-columns: 1fr; gap: 1.75rem; }
+
+  /* Section labels: smaller */
+  .section-label { font-size: .62rem; }
+
+  /* Specs: ensure no horizontal overflow */
+  .spec-row {
+    flex-wrap: wrap;
+    gap: .35rem;
+  }
+  .spec-val { text-align: left; }
+
+  /* Download */
+  .download-box { padding: 1.25rem 1rem; border-radius: 10px; }
+  .download-placeholder {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: .72rem;
+  }
+  .req-list { gap: .5rem 1rem; }
+
+  /* Lang dropdown: wider on mobile */
+  .lang-dropdown { min-width: 110px; right: 0; }
+
+  /* Footer */
+  footer { padding: 1.25rem 1.1rem; }
+}
+
+/* ── VERY SMALL  (≤ 360px) ─────────────────────────────── */
+@media (max-width: 360px) {
+  :root { --px: .9rem; }
+  nav { padding: 0 .9rem; }
+  .nav-cta { padding: 6px 10px; font-size: .72rem !important; }
+  .lang-btn { padding: 5px 7px; font-size: .7rem; }
+  footer { padding: 1rem .9rem; }
+}
+
+/* ── TOUCH: remove hover effects that look wrong on mobile ── */
+@media (hover: none) {
+  .feature-card:hover  { background: var(--bg); }
+  .spec-row:hover      { background: var(--bg); }
+  .btn-primary:hover   { transform: none; opacity: 1; }
+  .btn-ghost:hover     { transform: none; }
+  .lang-btn:hover      { border-color: var(--line); color: var(--text-2); }
+  .theme-toggle:hover  { border-color: var(--line); color: var(--text-2); background: transparent; }
+}
