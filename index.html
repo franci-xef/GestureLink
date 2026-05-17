@@ -4,66 +4,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GestureLink — Control the future with your hands</title>
-<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">
     <span class="dot"></span>
     GestureLink
   </a>
   <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#how">Come funziona</a></li>
-    <li><a href="#specs">Requisiti</a></li>
-    <li><a href="#download" class="nav-cta">Download</a></li>
+    <li class="hide-mobile"><a href="#features" data-i18n="nav_features">Caratteristiche</a></li>
+    <li class="hide-mobile"><a href="#how" data-i18n="nav_how">Come funziona</a></li>
+    <li class="hide-mobile"><a href="#specs" data-i18n="nav_specs">Requisiti</a></li>
+    <li>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag" id="langFlag">🇮🇹</span>
+          <span class="lang-label" id="langLabel">IT</span>
+          <svg class="lang-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ul class="lang-dropdown" id="langDropdown" role="listbox">
+          <li class="lang-option active" data-lang="it" role="option"><span>🇮🇹</span> Italiano</li>
+          <li class="lang-option" data-lang="en" role="option"><span>🇬🇧</span> English</li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="#download" class="nav-cta" data-i18n="nav_download">Download</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-glow"></div>
-  <div class="hero-tag">Braccio robotico · MediaPipe · Arduino</div>
-  <h1>Controlla il futuro<br>con le <span class="gradient">tue mani</span></h1>
-  <p class="hero-sub">
-    GestureLink trasforma i movimenti della tua mano in comandi precisi per il tuo braccio robotico. Nessun controller. Nessun ritardo. Solo tu e la macchina.
-  </p>
+  <div class="hero-tag" data-i18n="hero_tag">Braccio robotico · MediaPipe · Arduino</div>
+  <h1 data-i18n="hero_h1">Controlla il futuro<br>con le <span class="gradient">tue mani</span></h1>
+  <p class="hero-sub" data-i18n="hero_sub">GestureLink trasforma i movimenti della tua mano in comandi precisi per il tuo braccio robotico. Nessun controller. Nessun ritardo. Solo tu e la macchina.</p>
   <div class="hero-btns">
-    <a href="#download" class="btn-primary">Scarica ora</a>
-    <a href="#how" class="btn-ghost">Come funziona →</a>
+    <a href="#download" class="btn-primary" data-i18n="hero_btn_download">Scarica ora</a>
+    <a href="#how" class="btn-ghost" data-i18n="hero_btn_how">Come funziona →</a>
   </div>
-
-  <!-- Mano SVG decorativa -->
   <div class="hero-hand">
     <svg width="260" height="300" viewBox="0 0 340 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Palmo -->
-      <polygon points="170,320 90,265 75,170 120,155 145,230 170,110 195,230 220,155 265,170 250,265"
-               fill="rgba(79,111,255,0.07)" stroke="rgba(79,111,255,0.3)" stroke-width="1"/>
-      <!-- Pollice -->
+      <polygon points="170,320 90,265 75,170 120,155 145,230 170,110 195,230 220,155 265,170 250,265" fill="rgba(79,111,255,0.07)" stroke="rgba(79,111,255,0.3)" stroke-width="1"/>
       <line x1="90" y1="265" x2="72" y2="205" stroke="#e0b0ff" stroke-width="2"/>
       <line x1="72" y1="205" x2="62" y2="155" stroke="#e0b0ff" stroke-width="2"/>
       <line x1="62" y1="155" x2="55" y2="115" stroke="#e0b0ff" stroke-width="2"/>
-      <!-- Indice -->
       <line x1="120" y1="160" x2="116" y2="110" stroke="#80cfff" stroke-width="2"/>
       <line x1="116" y1="110" x2="113" y2="72" stroke="#80cfff" stroke-width="2"/>
       <line x1="113" y1="72" x2="111" y2="44" stroke="#80cfff" stroke-width="2"/>
-      <!-- Medio -->
       <line x1="160" y1="152" x2="160" y2="100" stroke="#80ffb0" stroke-width="2"/>
       <line x1="160" y1="100" x2="160" y2="62" stroke="#80ffb0" stroke-width="2"/>
       <line x1="160" y1="62" x2="160" y2="36" stroke="#80ffb0" stroke-width="2"/>
-      <!-- Anulare -->
       <line x1="200" y1="156" x2="203" y2="106" stroke="#ffd080" stroke-width="2"/>
       <line x1="203" y1="106" x2="205" y2="70" stroke="#ffd080" stroke-width="2"/>
       <line x1="205" y1="70" x2="206" y2="44" stroke="#ffd080" stroke-width="2"/>
-      <!-- Mignolo -->
       <line x1="234" y1="168" x2="243" y2="124" stroke="#ff9090" stroke-width="2"/>
       <line x1="243" y1="124" x2="248" y2="92" stroke="#ff9090" stroke-width="2"/>
       <line x1="248" y1="92" x2="251" y2="70" stroke="#ff9090" stroke-width="2"/>
-      <!-- Connessioni palmo -->
       <line x1="90" y1="265" x2="170" y2="320" stroke="white" stroke-width="1.2" opacity=".25"/>
       <line x1="250" y1="265" x2="170" y2="320" stroke="white" stroke-width="1.2" opacity=".25"/>
       <line x1="120" y1="160" x2="90" y2="265" stroke="white" stroke-width="1.2" opacity=".2"/>
@@ -71,41 +73,18 @@
       <line x1="200" y1="156" x2="160" y2="152" stroke="white" stroke-width="1.2" opacity=".2"/>
       <line x1="234" y1="168" x2="200" y2="156" stroke="white" stroke-width="1.2" opacity=".2"/>
       <line x1="250" y1="265" x2="234" y2="168" stroke="white" stroke-width="1.2" opacity=".2"/>
-      <!-- Polso -->
       <circle cx="170" cy="320" r="7" fill="white" opacity=".8"/>
-      <!-- Nodi pollice -->
-      <circle cx="90" cy="265" r="5" fill="#e0b0ff"/>
-      <circle cx="72" cy="205" r="4.5" fill="#e0b0ff"/>
-      <circle cx="62" cy="155" r="4.5" fill="#e0b0ff"/>
-      <circle cx="55" cy="115" r="6" fill="#e0b0ff"/>
-      <!-- Nodi indice -->
-      <circle cx="120" cy="160" r="5" fill="#80cfff"/>
-      <circle cx="116" cy="110" r="4.5" fill="#80cfff"/>
-      <circle cx="113" cy="72" r="4.5" fill="#80cfff"/>
-      <circle cx="111" cy="44" r="6" fill="#80cfff"/>
-      <!-- Nodi medio -->
-      <circle cx="160" cy="152" r="5" fill="#80ffb0"/>
-      <circle cx="160" cy="100" r="4.5" fill="#80ffb0"/>
-      <circle cx="160" cy="62" r="4.5" fill="#80ffb0"/>
-      <circle cx="160" cy="36" r="6" fill="#80ffb0"/>
-      <!-- Nodi anulare -->
-      <circle cx="200" cy="156" r="5" fill="#ffd080"/>
-      <circle cx="203" cy="106" r="4.5" fill="#ffd080"/>
-      <circle cx="205" cy="70" r="4.5" fill="#ffd080"/>
-      <circle cx="206" cy="44" r="6" fill="#ffd080"/>
-      <!-- Nodi mignolo -->
-      <circle cx="234" cy="168" r="5" fill="#ff9090"/>
-      <circle cx="243" cy="124" r="4.5" fill="#ff9090"/>
-      <circle cx="248" cy="92" r="4.5" fill="#ff9090"/>
-      <circle cx="251" cy="70" r="6" fill="#ff9090"/>
-      <!-- Circuito polso -->
+      <circle cx="90" cy="265" r="5" fill="#e0b0ff"/><circle cx="72" cy="205" r="4.5" fill="#e0b0ff"/><circle cx="62" cy="155" r="4.5" fill="#e0b0ff"/><circle cx="55" cy="115" r="6" fill="#e0b0ff"/>
+      <circle cx="120" cy="160" r="5" fill="#80cfff"/><circle cx="116" cy="110" r="4.5" fill="#80cfff"/><circle cx="113" cy="72" r="4.5" fill="#80cfff"/><circle cx="111" cy="44" r="6" fill="#80cfff"/>
+      <circle cx="160" cy="152" r="5" fill="#80ffb0"/><circle cx="160" cy="100" r="4.5" fill="#80ffb0"/><circle cx="160" cy="62" r="4.5" fill="#80ffb0"/><circle cx="160" cy="36" r="6" fill="#80ffb0"/>
+      <circle cx="200" cy="156" r="5" fill="#ffd080"/><circle cx="203" cy="106" r="4.5" fill="#ffd080"/><circle cx="205" cy="70" r="4.5" fill="#ffd080"/><circle cx="206" cy="44" r="6" fill="#ffd080"/>
+      <circle cx="234" cy="168" r="5" fill="#ff9090"/><circle cx="243" cy="124" r="4.5" fill="#ff9090"/><circle cx="248" cy="92" r="4.5" fill="#ff9090"/><circle cx="251" cy="70" r="6" fill="#ff9090"/>
       <circle cx="170" cy="355" r="12" fill="none" stroke="#4f6fff" stroke-width="1.5" opacity=".6"/>
       <circle cx="170" cy="355" r="6" fill="#4f6fff" opacity=".8"/>
       <line x1="170" y1="320" x2="170" y2="343" stroke="#4f6fff" stroke-width="1.5" opacity=".7"/>
       <line x1="158" y1="355" x2="118" y2="355" stroke="#4f6fff" stroke-width="1" opacity=".4"/>
       <line x1="182" y1="355" x2="222" y2="355" stroke="#4f6fff" stroke-width="1" opacity=".4"/>
-      <circle cx="118" cy="355" r="3" fill="#4f6fff" opacity=".5"/>
-      <circle cx="222" cy="355" r="3" fill="#4f6fff" opacity=".5"/>
+      <circle cx="118" cy="355" r="3" fill="#4f6fff" opacity=".5"/><circle cx="222" cy="355" r="3" fill="#4f6fff" opacity=".5"/>
     </svg>
   </div>
 </section>
@@ -113,39 +92,39 @@
 <!-- FEATURES -->
 <section id="features">
   <div class="reveal">
-    <p class="section-label">// Caratteristiche</p>
-    <h2 class="section-title">Tutto quello che ti serve,<br>niente di superfluo.</h2>
+    <p class="section-label" data-i18n="feat_label">// Caratteristiche</p>
+    <h2 class="section-title" data-i18n="feat_title">Tutto quello che ti serve,<br>niente di superfluo.</h2>
   </div>
   <div class="features-grid reveal">
     <div class="feature-card">
       <div class="feature-icon">🖐</div>
-      <h3>Tracking in tempo reale</h3>
-      <p>21 landmark per mano rilevati a 30+ FPS tramite MediaPipe. Supporto fino a 2 mani simultanee con label Left/Right automatica.</p>
+      <h3 data-i18n="f1_h">Tracking in tempo reale</h3>
+      <p data-i18n="f1_p">21 landmark per mano rilevati a 30+ FPS tramite MediaPipe. Supporto fino a 2 mani simultanee con label Left/Right automatica.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🤖</div>
-      <h3>Controllo Arduino nativo</h3>
-      <p>Connessione seriale diretta al tuo microcontrollore. Porta COM e baud rate configurabili dalla UI, senza toccare il codice.</p>
+      <h3 data-i18n="f2_h">Controllo Arduino nativo</h3>
+      <p data-i18n="f2_p">Connessione seriale diretta al tuo microcontrollore. Porta COM e baud rate configurabili dalla UI, senza toccare il codice.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">📺</div>
-      <h3>Dual view</h3>
-      <p>Feed camera live con overlay MediaPipe da un lato, scheletro vettoriale pulito dall'altro. Ogni dito colorato in modo univoco.</p>
+      <h3 data-i18n="f3_h">Dual view</h3>
+      <p data-i18n="f3_p">Feed camera live con overlay MediaPipe da un lato, scheletro vettoriale pulito dall'altro. Ogni dito colorato in modo univoco.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⚡</div>
-      <h3>App desktop nativa</h3>
-      <p>Costruita con PyQt5. Nessun server web, nessun browser. Un singolo file Python, zero dipendenze aggiuntive da configurare.</p>
+      <h3 data-i18n="f4_h">App desktop nativa</h3>
+      <p data-i18n="f4_p">Costruita con PyQt5. Nessun server web, nessun browser. Un singolo file Python, zero dipendenze aggiuntive da configurare.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🎯</div>
-      <h3>Conteggio dita preciso</h3>
-      <p>Algoritmo basato su landmark normalizzati. Distingue pollice sinistro e destro sull'asse X, tutte le altre dita sull'asse Y.</p>
+      <h3 data-i18n="f5_h">Conteggio dita preciso</h3>
+      <p data-i18n="f5_p">Algoritmo basato su landmark normalizzati. Distingue pollice sinistro e destro sull'asse X, tutte le altre dita sull'asse Y.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🔌</div>
-      <h3>Invio delta-only</h3>
-      <p>Il valore viene inviato ad Arduino solo quando cambia. Nessuno spam sulla porta seriale, massima stabilità del collegamento.</p>
+      <h3 data-i18n="f6_h">Invio delta-only</h3>
+      <p data-i18n="f6_p">Il valore viene inviato ad Arduino solo quando cambia. Nessuno spam sulla porta seriale, massima stabilità del collegamento.</p>
     </div>
   </div>
 </section>
@@ -153,32 +132,32 @@
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="reveal">
-    <p class="section-label">// Come funziona</p>
-    <h2 class="section-title">Dal gesto al movimento<br>in quattro passi.</h2>
+    <p class="section-label" data-i18n="how_label">// Come funziona</p>
+    <h2 class="section-title" data-i18n="how_title">Dal gesto al movimento<br>in quattro passi.</h2>
   </div>
   <div class="steps">
     <div class="step reveal">
       <span class="step-num">01 —</span>
-      <h3>Cattura</h3>
-      <p>La webcam acquisisce il frame. OpenCV lo ribalta orizzontalmente e lo converte in RGB per MediaPipe.</p>
+      <h3 data-i18n="s1_h">Cattura</h3>
+      <p data-i18n="s1_p">La webcam acquisisce il frame. OpenCV lo ribalta orizzontalmente e lo converte in RGB per MediaPipe.</p>
       <div class="step-line"></div>
     </div>
     <div class="step reveal">
       <span class="step-num">02 —</span>
-      <h3>Analisi</h3>
-      <p>MediaPipe individua 21 landmark 3D per ogni mano e calcola quali dita sono alzate o chiuse.</p>
+      <h3 data-i18n="s2_h">Analisi</h3>
+      <p data-i18n="s2_p">MediaPipe individua 21 landmark 3D per ogni mano e calcola quali dita sono alzate o chiuse.</p>
       <div class="step-line"></div>
     </div>
     <div class="step reveal">
       <span class="step-num">03 —</span>
-      <h3>Visualizzazione</h3>
-      <p>Lo scheletro viene ridisegnato in tempo reale nel canvas Qt con colori distinti per ogni dito.</p>
+      <h3 data-i18n="s3_h">Visualizzazione</h3>
+      <p data-i18n="s3_p">Lo scheletro viene ridisegnato in tempo reale nel canvas Qt con colori distinti per ogni dito.</p>
       <div class="step-line"></div>
     </div>
     <div class="step reveal">
       <span class="step-num">04 —</span>
-      <h3>Comando</h3>
-      <p>Il conteggio totale delle dita viene inviato via seriale all'Arduino, che comanda il braccio robotico.</p>
+      <h3 data-i18n="s4_h">Comando</h3>
+      <p data-i18n="s4_p">Il conteggio totale delle dita viene inviato via seriale all'Arduino, che comanda il braccio robotico.</p>
       <div class="step-line"></div>
     </div>
   </div>
@@ -187,62 +166,38 @@
 <!-- SPECS -->
 <section id="specs">
   <div class="reveal">
-    <p class="section-label">// Requisiti di sistema</p>
-    <h2 class="section-title">Cosa ti serve per iniziare.</h2>
+    <p class="section-label" data-i18n="spec_label">// Requisiti di sistema</p>
+    <h2 class="section-title" data-i18n="spec_title">Cosa ti serve per iniziare.</h2>
   </div>
   <div class="specs-grid reveal">
-    <div class="spec-row">
-      <span class="spec-key">Sistema operativo</span>
-      <span class="spec-val">Windows 10 / 11</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">Python</span>
-      <span class="spec-val">3.8 o superiore</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">Webcam</span>
-      <span class="spec-val">Qualsiasi USB/integrata</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">PyQt5</span>
-      <span class="spec-val">≥ 5.15</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">Arduino (opzionale)</span>
-      <span class="spec-val">Qualsiasi board seriale</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">MediaPipe</span>
-      <span class="spec-val">≥ 0.10</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">RAM consigliata</span>
-      <span class="spec-val">4 GB+</span>
-    </div>
-    <div class="spec-row">
-      <span class="spec-key">OpenCV</span>
-      <span class="spec-val">≥ 4.5</span>
-    </div>
+    <div class="spec-row"><span class="spec-key" data-i18n="sp1_k">Sistema operativo</span><span class="spec-val">Windows 10 / 11</span></div>
+    <div class="spec-row"><span class="spec-key">Python</span><span class="spec-val" data-i18n="sp2_v">3.8 o superiore</span></div>
+    <div class="spec-row"><span class="spec-key">Webcam</span><span class="spec-val" data-i18n="sp3_v">Qualsiasi USB/integrata</span></div>
+    <div class="spec-row"><span class="spec-key">PyQt5</span><span class="spec-val">≥ 5.15</span></div>
+    <div class="spec-row"><span class="spec-key" data-i18n="sp5_k">Arduino (opzionale)</span><span class="spec-val" data-i18n="sp5_v">Qualsiasi board seriale</span></div>
+    <div class="spec-row"><span class="spec-key">MediaPipe</span><span class="spec-val">≥ 0.10</span></div>
+    <div class="spec-row"><span class="spec-key" data-i18n="sp7_k">RAM consigliata</span><span class="spec-val">4 GB+</span></div>
+    <div class="spec-row"><span class="spec-key">OpenCV</span><span class="spec-val">≥ 4.5</span></div>
   </div>
 </section>
 
 <!-- DOWNLOAD -->
 <section id="download">
   <div class="reveal">
-    <p class="section-label">// Download</p>
-    <h2 class="section-title">Pronto a iniziare?</h2>
+    <p class="section-label" data-i18n="dl_label">// Download</p>
+    <h2 class="section-title" data-i18n="dl_title">Pronto a iniziare?</h2>
   </div>
   <div class="download-box reveal">
-    <p class="download-version">Versione — coming soon</p>
+    <p class="download-version" data-i18n="dl_version">Versione — coming soon</p>
     <h3>GestureLink</h3>
-    <p>Il download sarà disponibile a breve. Lascia la tua email per essere notificato al lancio.</p>
-    <div class="download-placeholder">Download non ancora disponibile</div>
-    <p class="download-note">Richiede Python 3.8+ · pip install -r requirements.txt</p>
+    <p data-i18n="dl_sub">Il download sarà disponibile a breve. Lascia la tua email per essere notificato al lancio.</p>
+    <div class="download-placeholder" data-i18n="dl_placeholder">Download non ancora disponibile</div>
+    <p class="download-note" data-i18n="dl_note">Richiede Python 3.8+ · pip install -r requirements.txt</p>
     <div class="req-list">
       <span class="req-item">Windows 10/11</span>
       <span class="req-item">Webcam USB</span>
       <span class="req-item">Python 3.8+</span>
-      <span class="req-item">Arduino opzionale</span>
+      <span class="req-item" data-i18n="req_arduino">Arduino opzionale</span>
     </div>
   </div>
 </section>
@@ -250,20 +205,10 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">GestureLink</span>
-  <p>Costruito con MediaPipe · PyQt5 · OpenCV · Arduino</p>
-  <p style="color:var(--muted); font-size:.75rem;">© 2026</p>
+  <p data-i18n="footer_built">Costruito con MediaPipe · PyQt5 · OpenCV · Arduino</p>
+  <p>© 2026</p>
 </footer>
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>
