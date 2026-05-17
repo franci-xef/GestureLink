@@ -157,3 +157,30 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // ── INIT ───────────────────────────────────────────────────
 applyLang(currentLang);
+// ── THEME TOGGLE ───────────────────────────────────────────
+const themeToggle = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('gl_theme', theme);
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('gl_theme');
+  if (saved) return applyTheme(saved);
+  // Respect OS preference
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(prefersDark ? 'dark' : 'light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// React to OS preference changes in real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem('gl_theme')) applyTheme(e.matches ? 'dark' : 'light');
+});
+
+initTheme();
