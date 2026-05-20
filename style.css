@@ -355,7 +355,7 @@ h1 .gradient {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
@@ -584,7 +584,7 @@ footer p { font-size: .72rem; color: var(--text-3); }
 
   /* Features: 2 columns max on tablet */
   .features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Steps: 2 columns */
