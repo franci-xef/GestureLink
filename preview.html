@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureLink — Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preview.css">
+</head>
+
+<body>
+
+    <!-- ── NAV ──────────────────────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <span class="dot"></span>
+            GestureLink
+        </a>
+        <ul class="nav-links">
+            <li class="hide-mobile"><a href="index.html#features" data-i18n="nav_features">Caratteristiche</a></li>
+            <li class="hide-mobile"><a href="index.html#how" data-i18n="nav_how">Come funziona</a></li>
+            <li class="hide-mobile"><a href="index.html#specs" data-i18n="nav_specs">Requisiti</a></li>
+
+            <li class="nav-divider hide-mobile"></li>
+
+            <li class="hide-mobile"><a href="build.html" data-i18n="nav_build">Build</a></li>
+            <li class="hide-mobile"><a href="preview.html" class="active-page" data-i18n="nav_preview">Anteprima</a>
+            </li>
+            <li>
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="lang-flag" id="langFlag">🇮🇹</span>
+                        <span class="lang-label" id="langLabel">IT</span>
+                        <svg class="lang-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <ul class="lang-dropdown" id="langDropdown" role="listbox">
+                        <li class="lang-option active" data-lang="it" role="option"><span>🇮🇹</span> Italiano</li>
+                        <li class="lang-option" data-lang="en" role="option"><span>🇬🇧</span> English</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <line x1="12" y1="2" x2="12" y2="5" />
+                        <line x1="12" y1="19" x2="12" y2="22" />
+                        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+                        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+                        <line x1="2" y1="12" x2="5" y2="12" />
+                        <line x1="19" y1="12" x2="22" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+                        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                    </svg>
+                </button>
+            </li>
+            <li><a href="index.html#download" class="nav-cta" data-i18n="nav_download">Download</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── HERO ─────────────────────────────────────────────── -->
+    <header class="prev-hero">
+        <p class="section-label reveal" data-i18n="prev_label">// Anteprima</p>
+        <h1 class="reveal" data-i18n="prev_title">L'app in azione.</h1>
+        <p class="reveal" data-i18n="prev_sub">
+            Scopri l'interfaccia di GestureLink: feed camera, scheletro 3D e controllo Arduino in un'unica finestra.
+        </p>
+    </header>
+
+    <!-- ── MAIN ─────────────────────────────────────────────── -->
+    <main class="prev-main">
+
+        <!-- SCREENSHOT 1 — feed camera (flip: img sinistra, testo destra) -->
+        <div class="shot-block flip reveal">
+
+            <!-- testo a destra (direction:rtl gestisce il flip, direction:ltr lo ripristina internamente) -->
+            <div class="shot-text">
+                <span class="shot-tag" data-i18n="prev_s1_tag">01 — Feed camera</span>
+                <h2 data-i18n="prev_s1_h">Tracking in tempo reale</h2>
+                <p data-i18n="prev_s1_p">
+                    Il feed della webcam mostra i landmark
+                    MediaPipe sovrapposti in diretta: ogni dito ha il proprio colore identificativo.
+                </p>
+            </div>
+
+            <!-- immagine a sinistra -->
+            <div>
+                <div class="shot-img-wrap">
+                    <img src="img/gesturelink_camera_feed.png" alt="Feed camera con overlay MediaPipe">
+                </div>
+
+                <p class="shot-caption" data-i18n="prev_s1_tag">01 — Feed camera</p>
+            </div>
+
+        </div><!-- /shot-block 2 -->
+
+
+        <!-- SCREENSHOT 3 — scheletro 3D -->
+        <div class="shot-block reveal">
+
+            <!-- testo a sinistra -->
+            <div class="shot-text">
+                <span class="shot-tag" data-i18n="prev_s2_tag">02 — Scheletro 3D</span>
+                <h2 data-i18n="prev_s2_h">Visualizzazione vettoriale</h2>
+                <p data-i18n="prev_s2_p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Il canvas ridisegna lo scheletro con
+                    proiezione prospettica e filtro anti-jitter, rendendo visibili anche i movimenti più sottili.
+                </p>
+            </div>
+
+            <!-- immagine a destra -->
+            <div>
+                <div class="shot-img-wrap">
+                    <img src="img/gesturelink_3Dskeleton.png" alt="Scheletro 3D della mano">
+                </div>
+
+                <p class="shot-caption" data-i18n="prev_s2_tag">02 — Scheletro 3D</p>
+            </div>
+
+        </div><!-- /shot-block 3 -->
+
+
+        <!-- SCREENSHOT 4 — pannello Arduino (flip) -->
+        <div class="shot-block flip reveal">
+
+            <!-- testo a destra -->
+            <div class="shot-text">
+                <span class="shot-tag" data-i18n="prev_s3_tag">03 — Controllo Arduino</span>
+                <h2 data-i18n="prev_s3_h">Connessione seriale nativa</h2>
+                <p data-i18n="prev_s3_p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Il pannello Arduino permette di selezionare
+                    porta COM e baud rate senza toccare il codice. Lo stato della connessione è sempre visibile nella
+                    nav bar.
+                </p>
+            </div>
+
+            <!-- immagine a sinistra -->
+            <div>
+                <div class="shot-img-wrap">
+                    <img src="img/gesturelink_arduino.png" alt="Pannello di controllo Arduino">
+                </div>
+                <p class="shot-caption" data-i18n="prev_s3_tag">03 — Controllo Arduino</p>
+            </div>
+
+        </div><!-- /shot-block 4 -->
+
+
+        <!--  SCREENSHOT 4 — full-width, visione d'insieme -->
+        <div class="shot-block-full reveal">
+
+            <div class="shot-text">
+                <span class="shot-tag" data-i18n="prev_full_tag">04 — Visione d'insieme</span>
+                <h2 data-i18n="prev_full_h">Un'unica finestra, tutto il controllo</h2>
+                <p data-i18n="prev_full_p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. GestureLink è progettato per essere
+                    immediato:
+                    avvia il tracking, connetti l'Arduino e il braccio risponde ai tuoi gesti in meno di un secondo.
+                </p>
+            </div>
+
+            <div>
+                <div class="shot-img-wrap">
+                    <img src="img/gesturelink.png" alt="Visione completa dell'app">
+                </div>
+                <p class="shot-caption" data-i18n="prev_full_tag">04 — Visione d'insieme</p>
+            </div>
+
+        </div><!-- /shot-block-full -->
+
+
+        <!-- CTA -->
+        <div class="prev-cta reveal">
+            <h2 data-i18n="prev_cta_h">Pronto a provarlo?</h2>
+            <p data-i18n="prev_cta_p">
+                Scarica GestureLink, collega la tua webcam e inizia a controllare il braccio robotico con le mani.
+            </p>
+            <div class="prev-cta-btns">
+                <a href="index.html#download" class="btn-primary" data-i18n="prev_cta_btn">Scarica ora</a>
+                <a href="build.html" class="btn-ghost" data-i18n="prev_cta_sec">Vedi come costruirlo →</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ── FOOTER ────────────────────────────────────────────── -->
+    <footer>
+        <span class="footer-logo">GestureLink</span>
+        <p data-i18n="footer_built">Costruito con MediaPipe · PyQt5 · OpenCV · Arduino</p>
+        <p>Created by Francesco Aureli - © 2026</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script>
+        // Highlight active nav link
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            if (a.href === location.href) a.style.color = 'var(--accent)';
+        });
+    </script>
+</body>
+
+</html>
