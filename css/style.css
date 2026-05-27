@@ -201,6 +201,58 @@ nav {
   }
 }
 
+/* ── SECONDARY NAV (mobile only) ────────────────────────────────────────────────── */
+.mobile-secondary-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-secondary-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    position: fixed;
+    top: 56px;           /* attaccata sotto la nav */
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.45rem var(--px);
+    transition: background .25s ease;
+  }
+
+  .mobile-secondary-nav a {
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 450;
+    text-decoration: none;
+    color: var(--text-2);
+    border: 1px solid var(--line);
+    transition: all 0.2s ease;
+  }
+
+  .mobile-secondary-nav a.active-page {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    font-weight: 500;
+  }
+
+  /* compensa l'altezza della seconda barra nell'hero */
+  #hero {
+    padding-top: calc(56px + 36px + 2.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  #hero {
+    padding-top: calc(52px + 36px + 2rem);
+  }
+}
+
 /* ── THEME TOGGLE ────────────────────────────────────────── */
 .theme-toggle {
   display: flex;
