@@ -687,24 +687,38 @@ h1 .gradient {
   margin-bottom: 1.75rem;
 }
 
-.download-placeholder {
+.download-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 10px 22px;
-  color: var(--text-3);
-  font-size: .78rem;
-  font-family: var(--mono);
-  cursor: not-allowed;
-  user-select: none;
-  background: var(--island);
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 26px;
+  border-radius: 8px;
+
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+
+  font-size: .82rem;
+  font-weight: 500;
+  font-family: var(--sans);
+
+  border: 1px solid transparent;
+
+  transition: transform .15s ease, opacity .18s ease, background .18s ease;
 }
 
-.download-placeholder::before {
-  content: '↓';
-  opacity: .4;
+.download-btn:hover {
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+/* optional icon */
+.download-btn::before {
+  content: "↓";
+  font-size: .9rem;
+  opacity: .9;
 }
 
 .download-note {
